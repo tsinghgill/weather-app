@@ -33,7 +33,7 @@ app.get('/hello', async (req, res) => {
             res.cookie('sessionId', sessionId, { httpOnly: true }); // Set cookie
         }
 
-        res.json({ message: "Weather data", sessionId: sessionId });
+        res.json({ message: "Weather data", sessionId: sessionId, weather: weatherData });
     } catch (error) {
         console.error("Error in /hello:", error);
         res.status(500).json({ error: "Internal Server Error" });
